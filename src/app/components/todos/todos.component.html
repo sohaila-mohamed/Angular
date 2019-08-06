@@ -1,5 +1,11 @@
-<h1>Hello</h1>
 
-<app-todo-component *ngFor="let todo of Todos" [todo]="todo">
+<app-header>
+</app-header>
+<app-add-todo>
+
+</app-add-todo>
+<app-todo-component *ngFor="let todo of Todos" [todo]="todo"
+
+(deleteTodo)="deleteTodo($event)">
 
 </app-todo-component>
