@@ -1,7 +1,7 @@
 
 <app-header>
 </app-header>
-<app-add-todo>
+<app-add-todo (addtodo)="addtodo($event)">
 
 </app-add-todo>
 <app-todo-component *ngFor="let todo of Todos" [todo]="todo"

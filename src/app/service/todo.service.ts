@@ -10,7 +10,7 @@ const httpOptions ={
   providedIn: 'root'
 })
 export class TodoService {
-  todoUrl:string='https://my-json-server.typicode.com/sohaila-mohamed/Jason/todos';
+  todoUrl:string='http://localhost:3000/todos';
 
   constructor(private http:HttpClient) { }
   gettodos():Observable<todo_item[]>{
@@ -30,6 +30,9 @@ export class TodoService {
     const url=`${this.todoUrl}/${todo.id}`;
     return this.http.delete<todo_item>(url,httpOptions);
 
+  }
+  addTodo(todo:todo_item):Observable<todo_item>{
+    return this.http.post<todo_item>(this.todoUrl,todo,httpOptions);
   }
 
 }
